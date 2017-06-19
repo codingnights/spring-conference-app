@@ -10,9 +10,9 @@ import java.net.URI;
 public class Event {
     private Long id;
     private String title;
-    private EventDate eventDate;
+    private String eventDate;
     private String subject;
-    private EventLocation eventLocation;
+    private String eventLocation;
     private URI url;
     private String description;
 
@@ -33,11 +33,11 @@ public class Event {
         this.title = title;
     }
 
-    public EventDate getEventDate() {
+    public String getEventDate() {
         return eventDate;
     }
 
-    public void setEventDate(EventDate eventDate) {
+    public void setEventDate(String eventDate) {
         this.eventDate = eventDate;
     }
 
@@ -49,11 +49,11 @@ public class Event {
         this.subject = subject;
     }
 
-    public EventLocation getEventLocation() {
+    public String getEventLocation() {
         return eventLocation;
     }
 
-    public void setEventLocation(EventLocation eventLocation) {
+    public void setEventLocation(String eventLocation) {
         this.eventLocation = eventLocation;
     }
 
