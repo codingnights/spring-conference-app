@@ -38,11 +38,12 @@ public class EventController {
 
     @PostMapping("/event")
     public void postEvent(@RequestBody(required = false) Event event) {
-        if (event != null) {
-            System.out.println("post event");
-            eventList.add(event);
-        } else {
-            System.out.println("post empty event");
+        if (validateEvent(event)) {
+            eventsRepository.insertEvent(event);
         }
+    }
+
+    public boolean validateEvent(Event event) {
+        return event.getTitle() != null && event.getSubject() != null;
     }
 }

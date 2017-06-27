@@ -47,4 +47,18 @@ public class EventsRepository {
 
         return eventList;
     }
+
+    public void insertEvent(Event event) {
+        String sqlStatement = "INSERT INTO events(title, date, subject, location, URI, description) VALUE(?, ?, ?, ?, ?, ?)";
+        Object objectParams[] = new Object[]{
+                event.getTitle(),
+                event.getEventDate(),
+                event.getSubject(),
+                event.getEventLocation(),
+                event.getUrl(),
+                event.getDescription()
+        };
+
+        jdbcTemplate().update(sqlStatement, objectParams);
+    }
 }
